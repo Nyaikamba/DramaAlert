@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "670196458983",
+    "firebase_url": "https://dramaalert-c2adb.firebaseio.com",
+    "project_id": "dramaalert-c2adb",
+    "storage_bucket": "dramaalert-c2adb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670196458983:android:dca90588d854b1e3",
+        "android_client_info": {
+          "package_name": "e.android.dramaalert"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670196458983-b3ju29kea3bital4e47k5j6hmbc5466m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "e.android.dramaalert",
+            "certificate_hash": "d2940bee2c61e0d102183a5b6ba57f9f9a7b7748"
+          }
+        },
+        {
+          "client_id": "670196458983-s6gli25dtkhvmkeo40cfaqacg82cc4h9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeO_kLt6lRCTVLECgspIn9Fg41t7d-juw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670196458983-s6gli25dtkhvmkeo40cfaqacg82cc4h9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
