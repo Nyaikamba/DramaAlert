@@ -62,32 +62,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        
+
         <EditText
+            android:id="@+id/etUsername"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:hint="@string/username"
             android:drawableLeft="@drawable/ic_person_black_24dp"
             android:drawablePadding="10dp"
-            android:drawableStart="@drawable/ic_person_black_24dp" />
+            android:drawableStart="@drawable/ic_person_black_24dp"
+            android:hint="@string/username" />
 
         <EditText
+            android:id="@+id/etPassword"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
-            android:inputType="textPassword"
             android:drawableLeft="@drawable/ic_lock_black_24dp"
             android:drawablePadding="10dp"
-            android:drawableStart="@drawable/ic_lock_black_24dp" />
+            android:drawableStart="@drawable/ic_lock_black_24dp"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
 
         <Button
-            android:layout_marginTop="5dp"
+            android:id="@+id/btnLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@color/buttons"
             android:text="@string/login"
-            android:textColor="#fff"
-            />
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:textColor="#fff" />
     </LinearLayout>
 
 
