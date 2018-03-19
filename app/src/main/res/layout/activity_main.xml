@@ -5,92 +5,105 @@
     android:layout_height="match_parent"
     tools:context="e.android.dramaalert.MainActivity"
     android:orientation="vertical">
-<LinearLayout
-    android:layout_width ="match_parent"
-    android:layout_height ="wrap_content"
-    android:orientation="vertical"
-    android:padding="50dp"
-    android:background="@color/colorPrimaryDark">
-    
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:textColor="#fff"
-        android:text="@string/welcome"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:textSize="15sp"
-        android:text="@string/about_welcome"
-        android:layout_marginTop="25dp"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="233dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <Button
-            style="@style/Base.Widget.AppCompat.Button.Borderless"
-            android:layout_margin="10dp"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/buttonstyle"
-            android:text="@string/learn_more"
-            android:textColor="#fff" />
-
-        <Button
-            style="@style/Base.Widget.AppCompat.Button.Borderless"
-            android:layout_margin="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/buttonstyle"
-            android:text="@string/join_the_club"
+            android:text="@string/welcome"
             android:textColor="#fff"
-            tools:ignore="ButtonStyle" />
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/about_welcome"
+            android:textColor="#fff"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/buttonstyle"
+                android:text="@string/learn_more"
+                android:textColor="#fff"
+                android:id="@+id/btnLearnMore"/>
+
+            <Button
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/buttonstyle"
+                android:text="@string/Register"
+                android:textColor="#fff"
+                tools:ignore="ButtonStyle"
+                android:id="@+id/btnRegister"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
-
     <LinearLayout
-        android:gravity ="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/etUsername"
-            android:layout_width="350dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_person_black_24dp"
-            android:drawablePadding="10dp"
+            android:drawablePadding="5dp"
             android:drawableStart="@drawable/ic_person_black_24dp"
             android:hint="@string/username" />
 
         <EditText
             android:id="@+id/etPassword"
-            android:layout_width="350dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_lock_black_24dp"
-            android:drawablePadding="10dp"
+            android:drawablePadding="5dp"
             android:drawableStart="@drawable/ic_lock_black_24dp"
             android:hint="@string/password"
             android:inputType="textPassword" />
 
         <Button
             android:id="@+id/btnLogin"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="5dp"
             android:background="@color/buttons"
             android:text="@string/login"
-            style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:textColor="#fff" />
+
+        <TextView
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/IncorrectAttempt"
+            android:id="@+id/IncorrectAttempt"/>
+
+
     </LinearLayout>
 
 
