@@ -57,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity( new Intent(MainActivity.this, SecondActivity.class));
         }
 
+        //User Assertion
+        if(user == null)
+        {
+            throw new AssertionError("User not logged in");
+        }
+
 
 
         //Register Button
