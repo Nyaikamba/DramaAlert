@@ -45,26 +45,28 @@ public class Registration extends AppCompatActivity {
                     final String user_email = userEmail.getText().toString().trim();
                     String user_name = userName.getText().toString().trim();
                     final String user_password = userPassword.getText().toString().trim();
+                    register(user_email, user_password);
 
-                    firebaseAuth.createUserWithEmailAndPassword(user_email,user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            Log.e("Data", user_password);
-                            if(task.isSuccessful()) {
-                                Toast.makeText(Registration.this, "REGISTRATION SUCCESSFUL!", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(Registration.this, MainActivity.class));
-
-                            }
-                            else{
-                            Toast.makeText(Registration.this, "REGISTRATION FAILED!", Toast.LENGTH_SHORT).show();
-                        }
-                    }});
 
 
                 }
             }});}
 
+    private void register(String user_email, final String user_password){
+        firebaseAuth.createUserWithEmailAndPassword(user_email,user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                Log.e("Data", user_password);
+                if(task.isSuccessful()) {
+                    Toast.makeText(Registration.this, "REGISTRATION SUCCESSFUL!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Registration.this, MainActivity.class));
 
+                }
+                else{
+                    Toast.makeText(Registration.this, "REGISTRATION FAILED! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }});
+    }
 
     //update version
     private void setUIViews(){

@@ -5,16 +5,19 @@
     <string name="learn_more">Learn More</string>
     <string name="Register">REGISTER</string>
     <string name="login">LOGIN</string>
-    <string name="username">USERNAME</string>
     <string name="password">PASSWORD</string>
     <string name="testlogin">Test View Login Success!</string>
     <string name="title_activity_learn_more">LearnMore</string>
     <string name="IncorrectAttempt">Number of attempts remaining</string>
-    <string name="regUsername">Name</string>
-    <string name="regEmail">Email</string>
-    <string name="regPassword">Password</string>
+    <string name="regUsername">FULL NAME</string>
+    <string name="regEmail">EMAIL</string>
+    <string name="regPassword">PASSWORD</string>
     <string name="btnregister">REGISTER</string>
     <string name="Info">Drama Alert has various news sources that keep you up to date with the most recent news. Be able to customize your own page to your liking and view thousands of news stories!</string>
     <string name="inforeg">REGISTER</string>
     <string name="infologin">LOGIN</string>
+    <string name="btnlogout">LOGOUT</string>
+    <string name="logout">Logout</string>
+    <string name="settings">Settings</string>
+    <string name="refresh">Refresh</string>
 </resources>
