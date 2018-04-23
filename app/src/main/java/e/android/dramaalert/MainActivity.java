@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
         Register = findViewById(R.id.btnRegister);
         IncorrectAttempt = findViewById(R.id.IncorrectAttempt);
 
-        IncorrectAttempt.setText("No of attempts remaining: 3 ");
+        IncorrectAttempt.setText(R.string.incorrectattempts);
 
-        firebaseAuth = firebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
         //if user logged in direct to test login page
@@ -57,11 +57,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity( new Intent(MainActivity.this, SecondActivity.class));
         }
 
-        //User Assertion
-        if(user == null)
-        {
-            throw new AssertionError("User not logged in");
-        }
+
 
 
 
@@ -114,6 +110,19 @@ public class MainActivity extends AppCompatActivity {
                     IncorrectAttempt.setText("No. of attempts remaining: " + counter);
                     if (counter ==0)
                     {
+
+
+
+
+
+
+
+
+
+
+
+
+
                         Login.setEnabled(false);
                     }
 
