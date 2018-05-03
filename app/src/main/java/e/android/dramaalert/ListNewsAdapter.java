@@ -8,10 +8,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 import java.util.HashMap;
+
+
+//This class populates using the list row xml format layout created
 
 public class ListNewsAdapter extends BaseAdapter  {
     private Activity activity;
@@ -39,7 +40,7 @@ public class ListNewsAdapter extends BaseAdapter  {
             holder.galleryImage = convertView.findViewById(R.id.galleryImage);
             holder.author = convertView.findViewById(R.id.author);
             holder.title = convertView.findViewById(R.id.title);
-            holder.sdetails = convertView.findViewById(R.id.description);
+            holder.description = convertView.findViewById(R.id.description);
             holder.time = convertView.findViewById(R.id.time);
             convertView.setTag(holder);
         } else {
@@ -48,7 +49,7 @@ public class ListNewsAdapter extends BaseAdapter  {
         holder.galleryImage.setId(position);
         holder.author.setId(position);
         holder.title.setId(position);
-        holder.sdetails.setId(position);
+        holder.description.setId(position);
         holder.time.setId(position);
 
         HashMap<String, String> song;
@@ -58,16 +59,25 @@ public class ListNewsAdapter extends BaseAdapter  {
             holder.author.setText(song.get(SecondActivity.KEY_AUTHOR));
             holder.title.setText(song.get(SecondActivity.KEY_TITLE));
             holder.time.setText(song.get(SecondActivity.KEY_PUBLISH_DATE));
-            holder.sdetails.setText(song.get(SecondActivity.KEY_DESCRIPTION));
+            holder.description.setText(song.get(SecondActivity.KEY_DESCRIPTION));
 
             if(song.get(SecondActivity.KEY_IMAGE).length() < 5)
             {
                 holder.galleryImage.setVisibility(View.GONE);
             }
+            else{
+                //picasso use for resize large images here
+                          }
         }
-        catch(Exception e) {}
+        catch(Exception e) {
+            return null;
+        }
         return convertView;
     }
+
+
 }
+
+
 
 

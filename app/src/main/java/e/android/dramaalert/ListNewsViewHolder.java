@@ -5,5 +5,5 @@ import android.widget.TextView;
 
 class ListNewsViewHolder {
     ImageView galleryImage;
-    TextView author, title, sdetails, time;
+    TextView author, title, description, time;
 }

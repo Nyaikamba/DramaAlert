@@ -1,9 +1,11 @@
 package e.android.dramaalert;
 
-import android.annotation.SuppressLint;
+//import classes necessary for this class to work properly
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,7 +28,7 @@ public class SecondActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
 
-
+//My news API for BBC News
     String API_KEY = "91b12168ef3444d0ada4906ef06f5c45";
     String News_Source = "BBC_NEWS";
 
@@ -42,6 +44,7 @@ public class SecondActivity extends AppCompatActivity {
     static final String KEY_PUBLISH_DATE = "publishdate";
 
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,25 +67,24 @@ public class SecondActivity extends AppCompatActivity {
     }
 
 
-    @SuppressLint("StaticFieldLeak")
     private class DownloadNews extends AsyncTask<String, Void, String> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
 
         }
+
         protected String doInBackground(String... args) {
             String xml;
-
             String urlParameters = "";
-            xml = Function.excuteGet("https://newsapi.org/v1/articles?source="+News_Source+"&sortBy=top&apiKey="+API_KEY, urlParameters);
-            return  xml;
+            xml = Function.executeGet("https://newsapi.org/v1/articles?source=" + News_Source + "&sortBy=top&apiKey=" + API_KEY, urlParameters);
+            return xml;
         }
+
         @Override
         protected void onPostExecute(String xml) {
 
-            if(xml.length()>10){ // Just checking if not empty
-
+            if (xml.length() > 10) { // Check if empty
                 try {
                     JSONObject jsonResponse = new JSONObject(xml);
                     JSONArray jsonArray = jsonResponse.optJSONArray("articles");
@@ -103,6 +105,7 @@ public class SecondActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Unexpected error", Toast.LENGTH_SHORT).show();
                 }
 
+
                 ListNewsAdapter adapter = new ListNewsAdapter(SecondActivity.this, dataList);
                 listNews.setAdapter(adapter);
 
@@ -115,17 +118,12 @@ public class SecondActivity extends AppCompatActivity {
                     }
                 });
 
-            }else{
+            } else {
                 Toast.makeText(getApplicationContext(), "No news found", Toast.LENGTH_SHORT).show();
             }
         }
 
-
-
     }
-
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);

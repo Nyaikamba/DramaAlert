@@ -73,7 +73,8 @@
             android:drawableLeft="@drawable/ic_person_black_24dp"
             android:drawablePadding="5dp"
             android:drawableStart="@drawable/ic_person_black_24dp"
-            android:hint="@string/regEmail" />
+            android:hint="@string/regEmail"
+            android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/etPassword"

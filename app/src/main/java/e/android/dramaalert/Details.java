@@ -13,10 +13,11 @@ public class Details extends AppCompatActivity{
     WebView webView;
     ProgressBar loader;
     String url = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity);
+        setContentView(R.layout.details);
 
         Intent intent = getIntent();
         url = intent.getStringExtra("url");
