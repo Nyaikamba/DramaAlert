@@ -37,7 +37,7 @@ public class Function {
             connection.setDoOutput(false);
 
 
-
+//Ensures connections are working properly. Internet precautions
             InputStream is;
 
             int status = connection.getResponseCode();

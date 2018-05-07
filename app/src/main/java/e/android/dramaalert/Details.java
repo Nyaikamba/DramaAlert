@@ -10,18 +10,23 @@ import android.webkit.WebView;
 import android.widget.ProgressBar;
 
 public class Details extends AppCompatActivity{
-    WebView webView;
     ProgressBar loader;
     String url = "";
+    WebView webView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details);
 
+
         Intent intent = getIntent();
         url = intent.getStringExtra("url");
         loader = findViewById(R.id.loader);
+        loader = (ProgressBar)findViewById(R.id.loader);
+        webView = (WebView)findViewById(R.id.webView);
+
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDisplayZoomControls(false);
         webView.loadUrl(url);

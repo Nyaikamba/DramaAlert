@@ -1,7 +1,8 @@
 package e.android.dramaalert;
 
-//import classes necessary for this class to work properly
+//imports necessary for this class to work properly
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -30,11 +32,12 @@ public class SecondActivity extends AppCompatActivity {
 
 //My news API for BBC News
     String API_KEY = "91b12168ef3444d0ada4906ef06f5c45";
-    String News_Source = "BBC_NEWS";
+    String News_Source = "bbc-news";
 
     ListView listNews;
     ProgressBar loader;
 
+    //Arrangement mapping of key information
     ArrayList<HashMap<String,String>> dataList = new ArrayList<>();
     static final String KEY_AUTHOR = "author";
     static final String KEY_TITLE = "title";
@@ -42,6 +45,7 @@ public class SecondActivity extends AppCompatActivity {
     static final String KEY_URL ="url";
     static final String KEY_IMAGE = "image";
     static final String KEY_PUBLISH_DATE = "publishdate";
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -56,6 +60,7 @@ public class SecondActivity extends AppCompatActivity {
         loader = findViewById(R.id.loader);
         listNews.setEmptyView(loader);
 
+        //if there is a connection download available news if not let user know there is no connection
         if(Function.isNetworkAvailable(getApplicationContext()))
         {
             DownloadNews newsTask = new DownloadNews();
@@ -67,13 +72,17 @@ public class SecondActivity extends AppCompatActivity {
     }
 
 
+    //Download news function
     private class DownloadNews extends AsyncTask<String, Void, String> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
 
+
         }
 
+
+        //Uses API Key and news source defined above to get news
         protected String doInBackground(String... args) {
             String xml;
             String urlParameters = "";
@@ -89,7 +98,7 @@ public class SecondActivity extends AppCompatActivity {
                     JSONObject jsonResponse = new JSONObject(xml);
                     JSONArray jsonArray = jsonResponse.optJSONArray("articles");
 
-                    for (int i = 0; i < jsonArray.length(); i++) {
+                   for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
 
                         HashMap<String, String> map = new HashMap<>();
@@ -124,6 +133,8 @@ public class SecondActivity extends AppCompatActivity {
         }
 
     }
+
+    //Menu items on top of the page here
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -148,3 +159,5 @@ public class SecondActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
+
